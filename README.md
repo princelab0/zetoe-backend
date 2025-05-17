@@ -5,7 +5,7 @@ A FastAPI project for managing MCP (Model Context Protocol) integrations with Co
 ## Features
 
 - **Connection Creation**: Create connections to apps through Composio, which generates authorization URLs and connected account IDs
-- **MCP Server Creation**: Create MCP servers using connected account IDs and app names
+- **MCP Server Creation**: Create MCP servers using connected account IDs and app names.
 
 ## Project Structure
 
