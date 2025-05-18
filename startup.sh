@@ -1,1 +1,8 @@
-gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind=0.0.0.0:8000
+#!/bin/bash
+
+# Activate virtual environment if needed
+# source venv/bin/activate
+
+# Start your app (e.g., with uvicorn for FastAPI)
+exec uvicorn app.main:app --host 0.0.0.0 --port 8000
+
