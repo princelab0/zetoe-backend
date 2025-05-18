@@ -30,6 +30,9 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
+      - name: Make startup.sh executable
+        run: chmod +x startup.sh
+
       - name: Zip artifact for deployment
         run: zip -r release.zip . -x "venv/*" # Exclude the virtual environment
 
