@@ -1,6 +1,6 @@
 # MCP Store API
 
-A FastAPI project for managing MCP (Model Context Protocol) integrations with Composio.
+A FastAPI project for managing MCP (Model Context Protocol) integrations with Composio..
 
 ## Features
 
