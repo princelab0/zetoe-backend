@@ -7,8 +7,5 @@ class ConnectionRequest(BaseModel):
 
 
 class MCPServerRequest(BaseModel):
-    name: str = Field(..., description="Name of the MCP server")
-    connected_account_ids: List[str] = Field(..., description="List of connected account IDs")
-    apps: List[str] = Field(..., description="List of app names to include in the MCP server")
-    entity_id: str = Field("default", description="Entity ID for the MCP server")
+    nanoid: str = Field(..., description="NanoId from Composio")
     ttl: str = Field("no expiration", description="Time to live for the MCP server")

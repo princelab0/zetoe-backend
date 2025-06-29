@@ -33,7 +33,7 @@ async def create_connection(
         
         return ConnectionResponse(
             redirect_url=connection_data["redirect_url"],
-            connected_account_id=connection_data["connected_account_id"]
+            nanoid=connection_data["nanoid"]
         )
     except Exception as e:
         if isinstance(e, HTTPException):

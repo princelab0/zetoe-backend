@@ -17,20 +17,23 @@ async def create_mcp_server(
     composio_service: ComposioService = Depends(lambda: ComposioService())
 ) -> Any:
     """
-    Create a new MCP server.
+    Create a new MCP server with a random name.
     
-    This will use the connected account ID to create an MCP server with the specified apps.
+    This will use the provided auth_config_ids to create an MCP server.
     
     Returns:
     - url: URL of the created MCP server
     - server_id: ID of the created MCP server
     """
     try:
+        # Generate random name for the server
+        server_name = composio_service.generate_random_name()
+
+        auth_config_id = request.nanoid
+
         mcp_server_data = await composio_service.create_mcp_server(
-            name=request.name,
-            apps=request.apps,
-            connected_account_ids=request.connected_account_ids,
-            entity_id=request.entity_id,
+            name=server_name,
+            auth_config_ids=[auth_config_id],
             ttl=request.ttl
         )
         
