@@ -89,16 +89,12 @@ class ComposioService:
     async def create_connection(self, app_name: str) -> Dict[str, str]:
         """Create a connection for the given app."""
         try:
-            # Get app details
-            default_scopes = await self.get_default_scopes(app_name)
-            
             # Get app from Composio SDK
             app = self.composio.apps.get(name=app_name)
             
-            # Create integration
+            # Create integration with required parameters
             integration = self.composio.integrations.create(
                 app_id=app.appId,
-                auth_config={"scopes": default_scopes},
                 auth_mode="OAUTH2",
                 force_new_integration=True,
                 name=f"{app_name}_integration",

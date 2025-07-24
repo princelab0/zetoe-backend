@@ -22,7 +22,6 @@ def create_gmail_integration(api_key: str, integration_name: str) -> dict:
     # Create a new integration
     integration = composio.integrations.create(
         app_id=app.appId,
-        auth_config={"scopes": default_scopes},
         auth_mode="OAUTH2",
         force_new_integration=True,
         name=integration_name,
